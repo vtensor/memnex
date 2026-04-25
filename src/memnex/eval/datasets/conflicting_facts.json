@@ -1,0 +1,7 @@
+[
+  {"existing": "Customer wants a refund for order #4521", "incoming": "Customer accepted a replacement for order #4521", "is_conflict": true},
+  {"existing": "Customer prefers morning calls", "incoming": "Customer wants callbacks in the evening", "is_conflict": true},
+  {"existing": "Customer is on the premium plan", "incoming": "Customer downgraded to the basic plan", "is_conflict": true},
+  {"existing": "Order #1234 was damaged", "incoming": "Order #5678 arrived on time", "is_conflict": false},
+  {"existing": "Customer is happy with the product", "incoming": "Customer bought another product", "is_conflict": false}
+]

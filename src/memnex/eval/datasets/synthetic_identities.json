@@ -1,0 +1,28 @@
+[
+  {
+    "customer_id": "cust_001",
+    "name": "Vikram Dev",
+    "identifiers": [
+      {"channel": "voice", "identifier": "+91 92410 63955"},
+      {"channel": "whatsapp", "identifier": "wa:919241063955"},
+      {"channel": "web", "identifier": "sess_abc123"},
+      {"channel": "email", "identifier": "Vikram.Dev@Example.com"}
+    ]
+  },
+  {
+    "customer_id": "cust_002",
+    "name": "Riya Sharma",
+    "identifiers": [
+      {"channel": "voice", "identifier": "+91-98765-43210"},
+      {"channel": "app", "identifier": "user_8891"}
+    ]
+  },
+  {
+    "customer_id": "cust_003",
+    "name": "Arjun Patel",
+    "identifiers": [
+      {"channel": "email", "identifier": "arjun@example.com"},
+      {"channel": "web", "identifier": "sess_xyz789"}
+    ]
+  }
+]

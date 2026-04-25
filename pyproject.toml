@@ -1,0 +1,93 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "memnex"
+version = "0.1.0"
+description = "Cross-channel memory infrastructure for conversational AI agents."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.11"
+authors = [{ name = "Memnex Contributors" }]
+keywords = ["ai", "agents", "memory", "mcp", "llm", "conversational-ai"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+]
+
+dependencies = [
+    "pydantic>=2.6",
+    "click>=8.1",
+    "phonenumbers>=8.13",
+    "python-dateutil>=2.9",
+    "anyio>=4.3",
+    "rapidfuzz>=3.9",
+]
+
+[project.optional-dependencies]
+postgres = ["asyncpg>=0.29"]
+redis = ["redis[hiredis]>=5.0"]
+qdrant = ["qdrant-client>=1.9"]
+kafka = ["aiokafka>=0.10"]
+api = ["fastapi>=0.110", "uvicorn[standard]>=0.29"]
+mcp = ["mcp>=1.0"]
+llm-openai = ["openai>=1.20"]
+llm-anthropic = ["anthropic>=0.25"]
+embeddings-google = ["langchain-google-genai>=2.0"]
+embeddings-local = ["sentence-transformers>=2.7"]
+privacy-presidio = ["presidio-analyzer>=2.2"]
+metrics = ["prometheus-client>=0.20"]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "hypothesis>=6.100",
+    "ruff>=0.4",
+    "mypy>=1.9",
+]
+all = [
+    "asyncpg>=0.29",
+    "redis[hiredis]>=5.0",
+    "qdrant-client>=1.9",
+    "aiokafka>=0.10",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "mcp>=1.0",
+    "prometheus-client>=0.20",
+]
+
+[project.scripts]
+memnex = "memnex.cli.main:cli"
+
+[project.urls]
+Homepage = "https://github.com/vtensor/memnex"
+Documentation = "https://github.com/vtensor/memnex/tree/main/docs"
+Issues = "https://github.com/vtensor/memnex/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/memnex"]
+# Non-Python files (SQL migrations, eval JSON datasets) live inside the package
+# tree and are picked up by the `packages` directive above. Don't add a
+# `force-include` block here — it will produce duplicate entries in the wheel.
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["memnex"]

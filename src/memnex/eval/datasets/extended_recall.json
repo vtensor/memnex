@@ -1,0 +1,172 @@
+[
+  {
+    "user_id": "u1",
+    "transcripts": [
+      "hi, my order #4521 arrived damaged last week and I want a refund",
+      "I tried calling support twice but no one picked up"
+    ],
+    "questions": [
+      {"q": "what is the order number the customer is complaining about?", "expected": "4521"},
+      {"q": "what does the customer want?", "expected": "refund"},
+      {"q": "did the customer try to reach support?", "expected": "twice"}
+    ]
+  },
+  {
+    "user_id": "u2",
+    "transcripts": [
+      "my invoice 7801 is wrong, the charge is 2x what it should be",
+      "please issue a refund for the overcharge"
+    ],
+    "questions": [
+      {"q": "which invoice has an issue?", "expected": "7801"},
+      {"q": "what kind of problem is it?", "expected": "overcharge"},
+      {"q": "what action does the customer want?", "expected": "refund"}
+    ]
+  },
+  {
+    "user_id": "u3",
+    "transcripts": [
+      "can you cancel my subscription please, I dont need it anymore",
+      "I've been a premium customer for 4 years"
+    ],
+    "questions": [
+      {"q": "what does the customer want?", "expected": "cancel"},
+      {"q": "how long has the customer been with us?", "expected": "4 years"},
+      {"q": "what plan are they on?", "expected": "premium"}
+    ]
+  },
+  {
+    "user_id": "u4",
+    "transcripts": [
+      "my package never arrived, tracking shows delivered but I dont have it",
+      "order number is 9987"
+    ],
+    "questions": [
+      {"q": "what is the order number?", "expected": "9987"},
+      {"q": "what's the issue?", "expected": "never arrived"}
+    ]
+  },
+  {
+    "user_id": "u5",
+    "transcripts": [
+      "refnd please for order 3344, the product is defective",
+      "I want my money back today"
+    ],
+    "questions": [
+      {"q": "order number?", "expected": "3344"},
+      {"q": "what does the customer want?", "expected": "refund"}
+    ]
+  },
+  {
+    "user_id": "u6",
+    "transcripts": [
+      "my product stopped working after 2 days, item #5512",
+      "please send a replacement asap"
+    ],
+    "questions": [
+      {"q": "item number?", "expected": "5512"},
+      {"q": "what does customer want?", "expected": "replacement"}
+    ]
+  },
+  {
+    "user_id": "u7",
+    "transcripts": [
+      "I'd like to speak to a human agent, this chatbot is not helping",
+      "my issue is about order INV-7788 delayed shipping"
+    ],
+    "questions": [
+      {"q": "does the customer want human support?", "expected": "human"},
+      {"q": "which invoice has the issue?", "expected": "7788"},
+      {"q": "what is the issue about?", "expected": "delayed"}
+    ]
+  },
+  {
+    "user_id": "u8",
+    "transcripts": [
+      "my card was charged twice for order 2233, please fix",
+      "I prefer to be contacted by email going forward"
+    ],
+    "questions": [
+      {"q": "order number?", "expected": "2233"},
+      {"q": "what is the issue?", "expected": "charged twice"},
+      {"q": "how does the customer want to be contacted?", "expected": "email"}
+    ]
+  },
+  {
+    "user_id": "u9",
+    "transcripts": [
+      "hi, the app keeps crashing when I try to log in on order history",
+      "I'm using an iPhone 14"
+    ],
+    "questions": [
+      {"q": "what is the problem?", "expected": "crashing"},
+      {"q": "what device?", "expected": "iPhone"}
+    ]
+  },
+  {
+    "user_id": "u10",
+    "transcripts": [
+      "I would like to upgrade my plan to enterprise",
+      "my current plan is basic"
+    ],
+    "questions": [
+      {"q": "what does the customer want?", "expected": "upgrade"},
+      {"q": "what plan do they have now?", "expected": "basic"},
+      {"q": "what plan do they want?", "expected": "enterprise"}
+    ]
+  },
+  {
+    "user_id": "u11",
+    "transcripts": [
+      "order 5566 arrived but the item is wrong color, wanted blue got red",
+      "can you ship the right one and send a return label"
+    ],
+    "questions": [
+      {"q": "order number?", "expected": "5566"},
+      {"q": "what went wrong?", "expected": "wrong"},
+      {"q": "what action does customer want?", "expected": "return"}
+    ]
+  },
+  {
+    "user_id": "u12",
+    "transcripts": [
+      "my login is locked after too many attempts",
+      "my email is user@example.com"
+    ],
+    "questions": [
+      {"q": "what is the issue?", "expected": "locked"}
+    ]
+  },
+  {
+    "user_id": "u13",
+    "transcripts": [
+      "please reschedule my delivery to friday instead of wednesday",
+      "order 8899"
+    ],
+    "questions": [
+      {"q": "what does customer want?", "expected": "reschedule"},
+      {"q": "order number?", "expected": "8899"}
+    ]
+  },
+  {
+    "user_id": "u14",
+    "transcripts": [
+      "hi, do you have this product in size large?",
+      "I saw it on sale last week for ₹2500"
+    ],
+    "questions": [
+      {"q": "what size does customer want?", "expected": "large"}
+    ]
+  },
+  {
+    "user_id": "u15",
+    "transcripts": [
+      "I accidentally ordered 5 units instead of 1, ticket 1122",
+      "please cancel 4 of them"
+    ],
+    "questions": [
+      {"q": "ticket number?", "expected": "1122"},
+      {"q": "what does customer want?", "expected": "cancel"}
+    ]
+  }
+]

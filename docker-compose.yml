@@ -1,0 +1,59 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: memnex
+      POSTGRES_PASSWORD: memnex
+      POSTGRES_DB: memnex
+    ports: ["5432:5432"]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U memnex"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports: ["6333:6333"]
+    volumes:
+      - qdrantdata:/qdrant/storage
+    healthcheck:
+      test: ["CMD", "sh", "-c", "curl -f http://localhost:6333/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  memnex:
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+    environment:
+      MEMNEX_TENANT_ID: default
+      MEMNEX_POSTGRES_URL: postgresql://memnex:memnex@postgres:5432/memnex
+      MEMNEX_REDIS_URL: redis://redis:6379
+      MEMNEX_QDRANT_URL: http://qdrant:6333
+    ports: ["8500:8500"]
+    command: ["memnex", "serve", "rest", "--host", "0.0.0.0", "--port", "8500"]
+
+volumes:
+  pgdata:
+  redisdata:
+  qdrantdata:

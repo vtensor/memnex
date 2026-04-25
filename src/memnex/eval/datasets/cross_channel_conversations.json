@@ -1,0 +1,25 @@
+[
+  {
+    "customer": "cust_001",
+    "sessions": [
+      {
+        "channel": "voice",
+        "transcript": "Um, hi, so my order number 4521 arrived damaged last week. You know, the packaging was, like, totally crushed. I want a refund, please. I've been a customer for 3 years.",
+        "expected_facts": ["Order #4521 arrived damaged", "Wants refund", "Customer for 3 years"]
+      },
+      {
+        "channel": "whatsapp",
+        "transcript": [
+          {"from": "customer", "type": "text", "content": "Following up on my call earlier about order 4521"},
+          {"from": "customer", "type": "image", "media_url": "https://example.com/damage.jpg", "content": "photo of damage"}
+        ],
+        "expected_facts_present": ["Order #4521 arrived damaged", "Wants refund"]
+      }
+    ],
+    "handoff_questions": [
+      {"q": "What order are they complaining about?", "expected": "4521"},
+      {"q": "What do they want?", "expected": "refund"},
+      {"q": "How long have they been a customer?", "expected": "3 years"}
+    ]
+  }
+]
