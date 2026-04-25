@@ -6,7 +6,16 @@ All notable changes to Memnex are documented here. Format follows
 
 ## [Unreleased]
 
-## [0.1.0] – 2026-04-25
+## [0.1.1] - 2026-04-26
+
+### Fixed
+- README links now use absolute GitHub URLs so they resolve correctly on the PyPI project page (relative links 404 outside the GitHub tree).
+- Removed em-dashes throughout the README for consistent typography.
+
+### Changed
+- Trimmed the README: moved the "What's tested" status section and the roadmap into `docs/` where they belong; the README links to them instead of duplicating content.
+
+## [0.1.0] - 2026-04-25
 
 Initial public release.
 
