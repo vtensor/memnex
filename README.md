@@ -2,7 +2,7 @@
   <img src="docs/assets/memnex-logo.png" alt="Memnex — cross-channel permanent memory for AI agents" width="600">
 </p>
 
-**Cross-channel permanent memory for AI agents.**
+**Cross-channel permanent memory for AI agents**
 
 Memnex is a memory service for conversational AI agents. When the same user moves from a phone call to WhatsApp to web chat, every agent on every channel already knows what happened on the previous channels: same name, same open issues, same preferences, same history. No more "how can I help you today?" on channel three.
 
