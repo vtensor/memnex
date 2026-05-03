@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/memnex-logo.png" alt="Memnex — cross-channel permanent memory for AI agents" width="600">
+  <img src="docs/assets/memnex.png" alt="Memnex — cross-channel permanent memory for AI agents" width="600">
 </p>
 
 **Cross-channel permanent memory for AI agents**
