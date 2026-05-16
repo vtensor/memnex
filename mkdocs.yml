@@ -1,0 +1,111 @@
+site_name: Memnex
+site_description: Cross-channel permanent memory for AI agents over MCP.
+site_url: https://www.melonai.in/docs/memnex/
+site_author: Vikram Dev
+
+repo_name: vtensor/memnex
+repo_url: https://github.com/vtensor/memnex
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2026 Vikram Dev — Apache-2.0 licensed
+
+# Make navigation work whether served at root or under /docs/memnex/.
+use_directory_urls: true
+
+theme:
+  name: material
+  logo: assets/memnex.png
+  favicon: assets/memnex.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: green
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: green
+      accent: green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.action.edit
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home: README.md
+  - Integrate an agent:
+      - Integration guide: integration-guide.md
+      - MCP API reference: mcp.md
+      - REST / Python / CLI: api-reference.md
+  - Run Memnex:
+      - Operator guide: operator-guide.md
+      - Deployment: deployment.md
+      - Security: security.md
+  - Internals:
+      - Architecture: architecture.md
+      - Features: features.md
+      - Eval: eval.md
+  - Project:
+      - Comparison: comparison.md
+      - Roadmap: roadmap.md
+      - Publishing: publishing.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/vtensor/memnex
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/memnex/
+    - icon: fontawesome/solid/globe
+      link: https://www.melonai.in
